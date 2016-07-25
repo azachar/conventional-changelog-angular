@@ -1,3 +1,17 @@
+# Change Log
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+<a name="1.3.0"></a>
+# [1.3.0](https://github.com/azachar/conventional-changelog-chocolatejar/compare/v1.2.0...v1.3.0) (2016-07-25)
+
+
+### Features
+
+* Additional types like fea, ux and translate are supported. ([5abca1d](https://github.com/azachar/conventional-changelog-chocolatejar/commit/5abca1d))
+
+
+
 <a name="1.2.0"></a>
 # [1.2.0](https://github.com/conventional-changelog/conventional-changelog-angular/compare/v1.1.0...v1.2.0) (2016-05-10)
 
@@ -58,6 +72,3 @@
 ### Features
 
 * **init:** extracting code from https://github.com/ajoslin/conventional-changelog ([79a8c6b](https://github.com/stevemao/conventional-changelog-angular/commit/79a8c6b))
-
-
-
