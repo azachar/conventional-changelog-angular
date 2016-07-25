@@ -1,6 +1,6 @@
 {
   "name": "conventional-changelog-chocolatejar",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "conventional-changelog chocolatejar preset (extended angular)",
   "main": "index.js",
   "scripts": {
