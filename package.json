@@ -1,7 +1,7 @@
 {
-  "name": "conventional-changelog-angular",
+  "name": "conventional-changelog-chocolatejar",
   "version": "1.2.0",
-  "description": "conventional-changelog angular preset",
+  "description": "conventional-changelog chocolatejar preset (extended angular)",
   "main": "index.js",
   "scripts": {
     "coverage": "istanbul cover -x test.js _mocha -- -R spec --timeout 30000 && rm -rf ./coverage",
@@ -10,19 +10,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/conventional-changelog/conventional-changelog-angular.git"
+    "url": "git+https://github.com/azachar/conventional-changelog-chocolatejar.git"
   },
   "keywords": [
     "conventional-changelog",
     "angular",
+    "chocolatejar",
     "preset"
   ],
   "author": "Steve Mao",
+  "contributors": "Andrej Zachar",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/conventional-changelog/conventional-changelog-angular/issues"
+    "url": "https://github.com/azachar/conventional-changelog-chocolatejar/issues"
   },
-  "homepage": "https://github.com/conventional-changelog/conventional-changelog-angular#readme",
+  "homepage": "https://github.com/azachar/conventional-changelog-chocolatejar#readme",
   "devDependencies": {
     "chai": "^3.4.1",
     "conventional-changelog-core": "^1.0.1",

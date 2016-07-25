@@ -49,7 +49,7 @@ var writerOpts = {
       discard = false;
     });
 
-    if (commit.type === 'feat') {
+    if (commit.type === 'feat' || commit.type === 'fea') {
       commit.type = 'Features';
     } else if (commit.type === 'fix') {
       commit.type = 'Bug Fixes';
@@ -61,7 +61,7 @@ var writerOpts = {
       return;
     } else if (commit.type === 'docs') {
       commit.type = 'Documentation';
-    } else if (commit.type === 'style') {
+    } else if (commit.type === 'style' || commit.type === 'ux') {
       commit.type = 'Styles';
     } else if (commit.type === 'refactor') {
       commit.type = 'Code Refactoring';
@@ -69,6 +69,8 @@ var writerOpts = {
       commit.type = 'Tests';
     } else if (commit.type === 'chore') {
       commit.type = 'Chores';
+    } else if (commit.type === 'translate') {
+      commit.type = 'i18n';
     }
 
     if (commit.scope === '*') {

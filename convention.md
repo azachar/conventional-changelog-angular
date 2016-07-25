@@ -5,6 +5,12 @@ Appears under "Features" header, pencil subheader:
 ```
 feat(pencil): add 'graphiteWidth' option
 ```
+or
+```
+fea(pencil): add 'graphiteWidth' option
+ux(pencil): add 'graphiteWidth' option
+traslate(pencil): add 'graphiteWidth' option
+```
 
 Appears under "Bug Fixes" header, graphite subheader, with a link to issue #28:
 

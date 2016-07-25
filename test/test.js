@@ -7,7 +7,7 @@ var gitDummyCommit = require('git-dummy-commit');
 var shell = require('shelljs');
 var through = require('through2');
 
-describe('angular preset', function() {
+describe('chocolate - angular based preset', function() {
   before(function(done) {
     shell.config.silent = true;
     shell.rm('-rf', 'tmp');
@@ -18,7 +18,7 @@ describe('angular preset', function() {
 
     gitDummyCommit('chore: first commit');
     // fix this once https://github.com/arturadib/shelljs/issues/175 is solved
-    child.exec('git commit -m"feat: amazing new module\n\nBREAKING CHANGE: Not backward compatible." --allow-empty', function() {
+    child.exec('git commit -m"fea: amazing new module\n\nBREAKING CHANGE: Not backward compatible." --allow-empty', function() {
       gitDummyCommit(['fix(compile): avoid a bug', 'BREAKING CHANGE: The Change is huge.']);
       gitDummyCommit('perf(ngOptions): make it faster closes #1, #2');
       gitDummyCommit('revert(ngOptions): bad commit');
@@ -53,6 +53,7 @@ describe('angular preset', function() {
 
         expect(chunk).to.not.include('first commit');
         expect(chunk).to.not.include('feat');
+        expect(chunk).to.not.include('fea');
         expect(chunk).to.not.include('fix');
         expect(chunk).to.not.include('perf');
         expect(chunk).to.not.include('revert');
@@ -119,6 +120,29 @@ describe('angular preset', function() {
 
         done();
       }));
+  });
+
+
+  it('should include fea, ux and translate', function(done) {
+      gitDummyCommit(['translate(readme): make it clear', 'BREAKING CHANGE: The Change is huge.']);
+      gitDummyCommit(['ux(whitespace): make it easier to read', 'BREAKING CHANGE: The Change is huge.']);
+      gitDummyCommit(['fea(deps): bump', 'BREAKING CHANGE: The Change is huge.']);
+
+      conventionalChangelogCore({
+        config: preset
+      })
+        .on('error', function(err) {
+          done(err);
+        })
+        .pipe(through(function(chunk) {
+          chunk = chunk.toString();
+
+          expect(chunk).to.include('i18n');
+          expect(chunk).to.include('Styles');
+          expect(chunk).to.include('Features');
+
+          done();
+        }));
   });
 
   it('should work if there is a semver tag', function(done) {
